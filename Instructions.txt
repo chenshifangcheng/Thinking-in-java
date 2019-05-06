@@ -1,0 +1,88 @@
+Instructions for downloading, installing and testing the source code
+
+   1. Download the source code zip file from this link.
+ //下载
+
+   2. Create a directory in which to install the code. For these instructions, we'll refer to this directory as C:\TIJ4\code.
+ //创建一个目录来安装代码。这些说明，我们将此目录称为C：\ tij4代码。
+
+   3. Using Winzip or some other zip utility, extract the zip file into the C:\TIJ4\code directory. When you're done, you should 
+see several levels of directories, and in the C:\TIJ4\code directory, you'll see, among other things, subdirectories corresponding 
+to the chapters in the book.
+ //使用WinZip或其他一些实用工具，将zip文件解压缩到C：\ tij4 \代码目录。当你做完了，你应该看到目录的几个层次，并在C：\ tij4代码目录，
+你会看到，在其他事情上，子目录对应书中的章节。
+
+   4. Install Java SE5 from the download site at Sun. Select the "Download JDK 5.0" link. You'll also eventually want the documentation,
+ which is available further down on that page. You may also choose to install Java SE6; the code will work with that as well.
+ //在太阳的网站上下载安装java SE5。选择“下载JDK 5”链接。你也会最终想要的文件，这是可以进一步下载。你也可以选择安装java SE6；代码将与好工作。
+
+   5. Set the CLASSPATH in your computer's environment. For Windows machines, right-click on the "My Computer" icon and select 
+"Properties." Then select the "Advanced" tab and click the "Environment Variables" button at the bottom. Under "System Variables," 
+look to see if there's already a "CLASSPATH" variable. If there is, double click and add
+      ;.;..;C:\TIJ4\code;
+      to the end of the current entry. If there is no "CLASSPATH" variable, click the "New" button and enter
+      CLASSPATH
+      In the "Variable name" box, and
+      .;..;C:\TIJ4\code;
+      In the "Variable value" box, then click "OK". To verify that your classpath has been set, start a command prompt (see below), 
+then enter set and look for the CLASSPATH information in the output.
+ //设置类路径在您的计算机的环境。对于Windows机器，右键单击“我的电脑”图标，并选择“属性”。然后选择“高级”选项卡，点击底部的“环境变量”按钮。
+在“系统变量”下看看已经有一个“路径”变量。如果有，双击并添加
+；。；..；C：\ tij4代码；
+到当前条目的结尾。如果没有“路径”的变量，单击“新建”按钮，输入类路径
+在“变量名称”框中，并
+。；..；C：\ tij4代码；
+在“变量值”框，然后单击“确定”。验证您的类路径已定，启动命令提示符（见下文），
+然后输入集和输出路径中寻找信息。
+ 
+
+   6. Install the Ant build tool by following the instructions you will find in the Ant download. Note: Ant is not required in order to
+ compile the examples in the book. It is used to automate the process, but you can also compile each example individually (once you have 
+the CLASSPATH set, as described above) using the javac command-line compiler that was installed when you completed the previous step (note 
+that you may have to set the Windows PATH to point to javac.exe). To compile a file called MyProgram.java, you type javac MyProgram.java.
+ //按照Ant下载中的指示安装Ant构建工具。注意：Ant不是必需的，以便汇编书中的例子。它用于自动化过程，但您也可以单独编译每个示例（一旦您拥有
+类路径设置，如上面所描述的）使用javac命令行编译器安装当你完成前面的步骤（注你可以设置Windows路径指向javac .exe）。
+编译一个文件名为myprogram.java，键入javac myprogram.java。
+
+   7. Start a command prompt in the C:\TIJ4\code directory. To do this in Windows, press the "Start" button, then select "Run" and type
+ "cmd" and press "OK." then type
+      cd C:\TIJ4\code
+      into the resulting command window.
+ //开始在C命令提示符：\ tij4 \代码目录。在Windows下，按“开始”按钮，然后选择“运行”，键入“命令”，然后按“确定”。然后键入CD C：\ tij4代码
+进入结果命令窗口。
+
+   8. At this point you should be able to start a command prompt in C:\TIJ4\code and type ant build, and the build should successfully 
+compile all the chapters up to the io chapter, where it will fail with an error message about a missing library. If you only need to work 
+with chapters before io for now, this will suffice for awhile.
+ //在这一点上，你应该能够在C启动命令提示符：\ tij4代码和类型的Ant构建，而构建成功 将所有章节编译到IO章，在那里会出现关于丢失库的错误消息。
+如果你只需要工作与前几章IO现在，这就够了。
+
+   9. You can also move into individual chapters and type ant (to compile and execute the code in that chapter) or ant build (to compile the code only).
+ //您还可以移动到各个章节并输入Ant（编译和执行该章中的代码）或Ant构建（只编译代码）。
+
+  10. To build the entire code base, you'll need to install the additional libraries. These include:
+
+          * XOM
+          * Javassist
+          * The javaws.jar library, which comes with the standard Java installation, but which you must explicitly place in your classpath
+ (described below).
+          * The Eclipse SWT library. Click on the most recent build number, then scroll down to "SWT Binary and Source" and select the file corresponding to your platform. Further details about finding the jar file are in the book under the heading "Installing SWT." 
+
+      In general, you can install the above Jar files by placing them in the jre/lib/ext directory that is part of the "Java Runtime" that will be set up when you install the Java SE5 or Java SE6 development kit. You may have to hunt around for the JRE, but it can often be found under your "Program Files" directory, under "Java."
+ //要构建整个代码库，需要安装额外的库。这些措施包括：
+* XOM
+*使用
+* javaws.jar图书馆，配备标准的java安装，但是你必须在你的classpath中
+（下文描述）。
+* Eclipse SWT库。在最新的版本号点击，然后向下滚动到“SWT的二进制和源代码”，选择你的平台对应的文件。找到JAR文件更多的细节在标题下的“安装swt的书。”
+在一般情况下，你可以安装上面的jar文件放置在jre/lib/ext目录是“java”，将设置当您安装java SE5或java开发工具包中的一部分的。你可能不得不寻找JRE，
+但它往往是你的“程序文件”目录下找到，在“java”。
+
+
+  11. Alternatively, you can explicitly install each of the Jar files. To do this, you must add each one to your CLASSPATH, following the directions shown earlier on this page. However, you must also include the name of the Jar file in the CLASSPATH entry. For example, if you put the xom.jar file in a directory called C:\TIJ4\libraries\, then the associated CLASSPATH entry would be C:\TIJ4\libraries\xom.jar;.
+ //或者，你可以明确各自安装的jar文件。要做到这一点，你必须把每一个你的classpath中，表明本页前面的方向。但是，你也必须包括在列表中的jar文件的名称。
+例如，如果你把xom.jar文件的目录中调用C：\ tij4 \图书馆，那么相关的列表将C：\ tij4 \图书馆\ XOM。罐；。
+
+  12. This code is designed to work outside of IDEs. Because packages are not introduced until later chapters, and some of the fancier IDEs like Eclipse require all code to be in packages, if you want to use the code inside those IDEs you will have to make some adjustments (however, see the Eclipse.py program in the download package for some help). Different IDEs have different requirements and it may be more trouble than it's worth to get you started; instead, you may want to begin with a more basic editor like JEdit. 
+ //此代码的目的是在思想工作。因为包不到后面的章节介绍，和一些稀奇古怪的IDE如Eclipse要求所有代码在包，如果你想使用代码里面那些思想你将不得不做
+一些调整（不过，看到eclipse.py程序下载包中一些帮助）。不同的思想有不同的要求，这可能比让你值得更多的麻烦就开始了；相反，你可能想要开始一个更基本的编辑像JEdit。
