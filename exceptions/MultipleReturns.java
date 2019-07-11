@@ -13,6 +13,8 @@ public class MultipleReturns {
       if(i == 3) return;
       print("End");
       return;
+    } catch(Exception e) {
+      // try syntax always can use even no exception throw from it.
     } finally {
       print("Performing cleanup");
     }

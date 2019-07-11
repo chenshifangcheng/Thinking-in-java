@@ -18,7 +18,7 @@ public class PetCount3 {
         if(pair.getKey().isInstance(pet))
           put(pair.getKey(), pair.getValue() + 1);
     }	
-    public String toString() {
+/*    public String toString() {
       StringBuilder result = new StringBuilder("{");
       for(Map.Entry<Class<? extends Pet>,Integer> pair
           : entrySet()) {
@@ -30,11 +30,11 @@ public class PetCount3 {
       result.delete(result.length()-2, result.length());
       result.append("}");
       return result.toString();
-    }
+    }*/
   }	
   public static void main(String[] args) {
     PetCounter petCount = new PetCounter();
-    for(Pet pet : Pets.createArray(20)) {
+    for(Pet pet : Pets.createArray(2)) {
       printnb(pet.getClass().getSimpleName() + " ");
       petCount.count(pet);
     }

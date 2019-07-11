@@ -21,7 +21,7 @@ public class GreenhouseController {
     if(args.length == 1)
       gc.addEvent(
         new GreenhouseControls.Terminate(
-          new Integer(args[0])));
+          2000));
     gc.run();
   }
 } /* Output:

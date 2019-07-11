@@ -13,6 +13,7 @@ public class EnumClass {
       print(s == Shrubbery.CRAWLING);
       print(s.getDeclaringClass());
       print(s.name());
+      print(s);
       print("----------------------");
     }
     // Produce an enum value from a string name:
@@ -20,6 +21,9 @@ public class EnumClass {
       Shrubbery shrub = Enum.valueOf(Shrubbery.class, s);
       print(shrub);
     }
+
+    print(Shrubbery.CRAWLING);
+    print(Shrubbery.class);
   }
 } /* Output:
 GROUND ordinal: 0
